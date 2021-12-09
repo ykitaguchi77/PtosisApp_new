@@ -39,6 +39,7 @@
 		BF60F20A275F722C00DD6253 /* ConstHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstHolder.swift; sourceTree = "<group>"; };
 		BF60F20C275F799F00DD6253 /* SavedDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDateView.swift; sourceTree = "<group>"; };
 		BF60F20F275F7AC300DD6253 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		BF60F23427622EE500DD6253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		BF60F1EA275F6FF000DD6253 /* PtosisApp */ = {
 			isa = PBXGroup;
 			children = (
+				BF60F23427622EE500DD6253 /* Info.plist */,
 				BF60F1EF275F6FF200DD6253 /* Assets.xcassets */,
 				BF60F1FE275F703100DD6253 /* Pages */,
 				BF60F205275F71D000DD6253 /* Modules */,
@@ -336,6 +338,8 @@
 				DEVELOPMENT_TEAM = FKLM5SV532;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PtosisApp/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
@@ -369,6 +373,8 @@
 				DEVELOPMENT_TEAM = FKLM5SV532;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PtosisApp/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
