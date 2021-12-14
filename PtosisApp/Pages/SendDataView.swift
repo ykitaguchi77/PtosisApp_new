@@ -104,7 +104,7 @@ struct SendData: View {
     //ResultHolderにテキストデータを格納
     public func SaveToResultHolder(){
         //var imagenum: String = String(user.imageNum)
-        ResultHolder.GetInstance().SetAnswer(q1: self.stringDate(), q2: user.hashid, q3: user.id, q4: self.numToString(num: self.user.imageNum), q5: self.user.side[user.selected_side], q6: self.user.surgeon[user.selected_surgeon], q7: self.user.procedure[user.selected_procedure], q8: self.user.timing[user.selected_timing], q9: user.free_description)
+        ResultHolder.GetInstance().SetBasicAnswer(bq1: self.stringDate(), bq2: user.hashid, bq3: user.id, bq4: self.numToString(num: self.user.imageNum), bq5: self.user.side[user.selected_side], bq6: self.user.surgeon[user.selected_surgeon], bq7: self.user.procedure[user.selected_procedure], bq8: self.user.timing[user.selected_timing], bq9: user.free_description)
     }
     
     public func stringDate()->String{
@@ -150,41 +150,13 @@ struct SendData: View {
         }
 
     
-//    public func SendDataset(){
-//        var errorPointer: NSError?
-//        let textBlobURL = URL(string: ConstHolder.TEXTCONTAINERURI)
-//        let textBlobURI = AZSStorageUri(primaryUri: textBlobURL!)
-//        let textBlobContainer = AZSCloudBlobContainer(storageUri: textBlobURI, error: &errorPointer)
-//        let textBlob = textBlobContainer.blockBlobReference(fromName: ConstHolder.QUESTIONFILENAME)
-//        textBlob.upload(fromText: ResultHolder.GetInstance().GetAnswerJson(), completionHandler: { error in
-//            if (error != nil) {
-//                print(error!)
-//            } else{
-//                print("successfully uploaded text")
-//            }
-//        })
-//
-//        let imageBlobURL = URL(string: ConstHolder.IMAGECONTAINERURI)
-//        let imageBlobURI = AZSStorageUri(primaryUri: imageBlobURL!)
-//        let imageBlobContainer = AZSCloudBlobContainer(storageUri: imageBlobURI, error: &errorPointer)
-//        let images = ResultHolder.GetInstance().GetUIImages()
-//        for i in 0..<images.count{
-//            let blob2 = imageBlobContainer.blockBlobReference(fromName: String(i) + ".png")
-//            blob2.upload(from: images[i].pngData() ?? Data(), completionHandler: { error in
-//                    if (error != nil) {
-//                        print(error!)
-//                    } else{
-//                        print("successfully uploaded image")
-//                    }
-//            })
-//        }
-//    }
+
     
     
     //private func saveToDoc (image: UIImage, fileName: String ) -> Bool{
     public func SaveToDoc () -> Bool{
         let images = ResultHolder.GetInstance().GetUIImages()
-        let jsonfile = ResultHolder.GetInstance().GetAnswerJson()
+        let jsonfile = ResultHolder.GetInstance().GetBasicAnswerJson()
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         //let directory = self.user.hashid+".png"
         let fileURL = documentsURL.appendingPathComponent(self.user.hashid+".png")

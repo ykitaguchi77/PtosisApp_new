@@ -21,6 +21,12 @@
 		BF60F20B275F722C00DD6253 /* ConstHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F20A275F722C00DD6253 /* ConstHolder.swift */; };
 		BF60F20D275F799F00DD6253 /* SavedDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F20C275F799F00DD6253 /* SavedDateView.swift */; };
 		BF60F210275F7AC300DD6253 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F20F275F7AC300DD6253 /* UIImageExtension.swift */; };
+		BF60F23B2762409300DD6253 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BF60F23A2762409300DD6253 /* FirebaseAnalytics */; };
+		BF60F23D2762409300DD6253 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = BF60F23C2762409300DD6253 /* FirebaseAppDistribution-Beta */; };
+		BF60F2412762451900DD6253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF60F2402762451900DD6253 /* GoogleService-Info.plist */; };
+		BF60F278276741AE00DD6253 /* PtosisInterview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F277276741AE00DD6253 /* PtosisInterview.swift */; };
+		BF60F27A2768222500DD6253 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F2792768222500DD6253 /* RadioButton.swift */; };
+		BF60F27F276840DE00DD6253 /* InterviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60F27E276840DE00DD6253 /* InterviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,10 @@
 		BF60F20C275F799F00DD6253 /* SavedDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDateView.swift; sourceTree = "<group>"; };
 		BF60F20F275F7AC300DD6253 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		BF60F23427622EE500DD6253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BF60F2402762451900DD6253 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF60F277276741AE00DD6253 /* PtosisInterview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PtosisInterview.swift; sourceTree = "<group>"; };
+		BF60F2792768222500DD6253 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		BF60F27E276840DE00DD6253 /* InterviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF60F23B2762409300DD6253 /* FirebaseAnalytics in Frameworks */,
+				BF60F23D2762409300DD6253 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +86,12 @@
 			children = (
 				BF60F23427622EE500DD6253 /* Info.plist */,
 				BF60F1EF275F6FF200DD6253 /* Assets.xcassets */,
+				BF60F1F6275F6FF200DD6253 /* PtosisApp.xcdatamodeld */,
+				BF60F2402762451900DD6253 /* GoogleService-Info.plist */,
 				BF60F1FE275F703100DD6253 /* Pages */,
 				BF60F205275F71D000DD6253 /* Modules */,
 				BF60F20E275F7AA400DD6253 /* Extension */,
-				BF60F1F6275F6FF200DD6253 /* PtosisApp.xcdatamodeld */,
+				BF60F27D27683F4F00DD6253 /* InteviewForm */,
 				BF60F1F1275F6FF200DD6253 /* Preview Content */,
 			);
 			path = PtosisApp;
@@ -96,11 +110,13 @@
 			children = (
 				BF60F1EB275F6FF000DD6253 /* PtosisApp.swift */,
 				BF60F1ED275F6FF000DD6253 /* ContentView.swift */,
+				BF60F27E276840DE00DD6253 /* InterviewView.swift */,
 				BF60F1FF275F708600DD6253 /* InformationView.swift */,
 				BF60F201275F709F00DD6253 /* SendDataView.swift */,
 				BF60F203275F70BF00DD6253 /* CameraView.swift */,
 				BF60F20C275F799F00DD6253 /* SavedDateView.swift */,
 				BF60F1F4275F6FF200DD6253 /* Persistence.swift */,
+				BF60F277276741AE00DD6253 /* PtosisInterview.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -119,8 +135,16 @@
 			isa = PBXGroup;
 			children = (
 				BF60F20F275F7AC300DD6253 /* UIImageExtension.swift */,
+				BF60F2792768222500DD6253 /* RadioButton.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		BF60F27D27683F4F00DD6253 /* InteviewForm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InteviewForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +163,10 @@
 			dependencies = (
 			);
 			name = PtosisApp;
+			packageProductDependencies = (
+				BF60F23A2762409300DD6253 /* FirebaseAnalytics */,
+				BF60F23C2762409300DD6253 /* FirebaseAppDistribution-Beta */,
+			);
 			productName = PtosisApp;
 			productReference = BF60F1E8275F6FF000DD6253 /* PtosisApp.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +195,9 @@
 				Base,
 			);
 			mainGroup = BF60F1DF275F6FF000DD6253;
+			packageReferences = (
+				BF60F2392762409300DD6253 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BF60F1E9275F6FF000DD6253 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +214,7 @@
 			files = (
 				BF60F1F3275F6FF200DD6253 /* Preview Assets.xcassets in Resources */,
 				BF60F1F0275F6FF200DD6253 /* Assets.xcassets in Resources */,
+				BF60F2412762451900DD6253 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,14 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF60F209275F720800DD6253 /* ResultHolder.swift in Sources */,
+				BF60F27A2768222500DD6253 /* RadioButton.swift in Sources */,
 				BF60F202275F709F00DD6253 /* SendDataView.swift in Sources */,
 				BF60F20D275F799F00DD6253 /* SavedDateView.swift in Sources */,
 				BF60F204275F70BF00DD6253 /* CameraView.swift in Sources */,
 				BF60F200275F708700DD6253 /* InformationView.swift in Sources */,
+				BF60F27F276840DE00DD6253 /* InterviewView.swift in Sources */,
 				BF60F1F5275F6FF200DD6253 /* Persistence.swift in Sources */,
 				BF60F20B275F722C00DD6253 /* ConstHolder.swift in Sources */,
 				BF60F1F8275F6FF200DD6253 /* PtosisApp.xcdatamodeld in Sources */,
 				BF60F207275F71F800DD6253 /* ImagePicker.swift in Sources */,
+				BF60F278276741AE00DD6253 /* PtosisInterview.swift in Sources */,
 				BF60F1EE275F6FF000DD6253 /* ContentView.swift in Sources */,
 				BF60F1EC275F6FF000DD6253 /* PtosisApp.swift in Sources */,
 				BF60F210275F7AC300DD6253 /* UIImageExtension.swift in Sources */,
@@ -354,7 +389,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yk-gankeisei.PtosisApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yk-gankeisei.PtosisApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -389,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "yk-gankeisei.PtosisApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yk-gankeisei.PtosisApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -419,6 +454,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF60F2392762409300DD6253 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF60F23A2762409300DD6253 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF60F2392762409300DD6253 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BF60F23C2762409300DD6253 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF60F2392762409300DD6253 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BF60F1F6275F6FF200DD6253 /* PtosisApp.xcdatamodeld */ = {

@@ -43,12 +43,13 @@ struct Informations: View {
                             }
                            .onChange(of: user.selected_surgeon) { _ in
                                self.user.isSendData = false
+                               UserDefaults.standard.set(user.selected_surgeon, forKey:"surgeondefault")
                                }
                     
                         Picker(selection: $user.age,
                                label: Text("年齢")) {
-                            ForEach(0..<100){ _x in
-                                Text("\(_x)")
+                            ForEach(0..<100){ age in
+                                Text("\(age)")
                             }
                         }
                        .onChange(of: user.age) { _ in

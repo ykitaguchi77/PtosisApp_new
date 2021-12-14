@@ -74,53 +74,110 @@ class ResultHolder{
         return imageJsons
     }
     
-    private (set) public var Answers: [String:String] = ["q1":"", "q2":"", "q3":"", "q4":"", "q5": "", "q6": "", "q7": "", "q8": "", "q9": ""]
+    
+    //基本情報
+    private (set) public var Answers: [String:String] = ["bq1":"", "bq2":"", "bq3":"", "bq4":"", "bq5": "", "bq6": "", "bq7": "", "bq8": "", "bq9": ""]
 
-    public func SetAnswer(q1:String, q2:String, q3:String, q4:String, q5:String, q6:String, q7:String, q8:String, q9:String){
-        Answers["q1"] = q1 //date
-        Answers["q2"] = q2 //hashID
-        Answers["q3"] = q3 //ID
-        Answers["q4"] = q4 //imgNum
-        Answers["q5"] = q5 //side
-        Answers["q6"] = q6 //surgeon
-        Answers["q7"] = q7 //procedure
-        Answers["q8"] = q8 //procedure
-        Answers["q9"] = q9 //free
+    public func SetBasicAnswer(bq1:String, bq2:String, bq3:String, bq4:String, bq5:String, bq6:String, bq7:String, bq8:String, bq9:String){
+        Answers["bq1"] = bq1 //date
+        Answers["bq2"] = bq2 //hashID
+        Answers["bq3"] = bq3 //ID
+        Answers["bq4"] = bq4 //imgNum
+        Answers["bq5"] = bq5 //side
+        Answers["bq6"] = bq6 //surgeon
+        Answers["bq7"] = bq7 //procedure
+        Answers["bq8"] = bq8 //procedure
+        Answers["bq9"] = bq9 //free
     }
 
-    public func GetAnswerJson() -> String{
-        let data = QuestionAnswerData()
-        data.pq1 = Answers["q1"] ?? ""
-        data.pq2 = Answers["q2"] ?? ""
-        data.pq3 = Answers["q3"] ?? ""
-        data.pq4 = Answers["q4"] ?? ""
-        data.pq5 = Answers["q5"] ?? ""
-        data.pq6 = Answers["q6"] ?? ""
-        data.pq7 = Answers["q7"] ?? ""
-        data.pq8 = Answers["q8"] ?? ""
-        data.pq9 = Answers["q9"] ?? ""
+    public func GetBasicAnswerJson() -> String{
+        let data = BasicQuestionAnswerData()
+        data.bq1 = Answers["bq1"] ?? ""
+        data.bq2 = Answers["bq2"] ?? ""
+        data.bq3 = Answers["bq3"] ?? ""
+        data.bq4 = Answers["bq4"] ?? ""
+        data.bq5 = Answers["bq5"] ?? ""
+        data.bq6 = Answers["bq6"] ?? ""
+        data.bq7 = Answers["bq7"] ?? ""
+        data.bq8 = Answers["bq8"] ?? ""
+        data.bq9 = Answers["bq9"] ?? ""
         let jsonEncoder = JSONEncoder()
         jsonEncoder.outputFormatting = .sortedKeys
         let jsonData = (try? jsonEncoder.encode(data)) ?? Data()
         let json = String(data: jsonData, encoding: String.Encoding.utf8)!
         return json
     }
+    
+    
+    
+    //症状アンケート
+    private (set) public var SymptomAnswers: [String:String] = ["sq1":"", "sq2":"", "sq3":"", "sq4":"", "sq5": "", "sq6": "", "sq7": "", "sq8": "", "sq9": "", "sq10": ""]
+
+        public func SetSymptomAnswer(sq1:String, sq2:String, sq3:String, sq4:String, sq5:String, sq6:String, sq7:String, sq8:String, sq9:String, sq10:String){
+            Answers["sq1"] = sq1
+            Answers["sq2"] = sq2
+            Answers["sq3"] = sq3
+            Answers["sq4"] = sq4
+            Answers["sq5"] = sq5
+            Answers["sq6"] = sq6
+            Answers["sq7"] = sq7
+            Answers["sq8"] = sq8
+            Answers["sq9"] = sq9
+            Answers["sq10"] = sq10
+        }
+
+        public func GetSymptomAnswerJson() -> String{
+            let data = SymptomQuestionAnswerData()
+            data.sq1 = Answers["sq1"] ?? ""
+            data.sq2 = Answers["sq2"] ?? ""
+            data.sq3 = Answers["sq3"] ?? ""
+            data.sq4 = Answers["sq4"] ?? ""
+            data.sq5 = Answers["sq5"] ?? ""
+            data.sq6 = Answers["sq6"] ?? ""
+            data.sq7 = Answers["sq7"] ?? ""
+            data.sq8 = Answers["sq8"] ?? ""
+            data.sq9 = Answers["sq9"] ?? ""
+            data.sq10 = Answers["sq10"] ?? ""
+            let jsonEncoder = JSONEncoder()
+            jsonEncoder.outputFormatting = .sortedKeys
+            let jsonData = (try? jsonEncoder.encode(data)) ?? Data()
+            let json = String(data: jsonData, encoding: String.Encoding.utf8)!
+            return json
+        }
+
+    
+    
+    
+    
 }
 
 class PatientImageData: Codable{
     var image = ""
 }
 
-class QuestionAnswerData: Codable{
-    var pq1 = ""
-    var pq2 = ""
-    var pq3 = ""
-    var pq4 = ""
-    var pq5 = ""
-    var pq6 = ""
-    var pq7 = ""
-    var pq8 = ""
-    var pq9 = ""
+class BasicQuestionAnswerData: Codable{
+    var bq1 = ""
+    var bq2 = ""
+    var bq3 = ""
+    var bq4 = ""
+    var bq5 = ""
+    var bq6 = ""
+    var bq7 = ""
+    var bq8 = ""
+    var bq9 = ""
+}
+
+class SymptomQuestionAnswerData: Codable{
+    var sq1 = ""
+    var sq2 = ""
+    var sq3 = ""
+    var sq4 = ""
+    var sq5 = ""
+    var sq6 = ""
+    var sq7 = ""
+    var sq8 = ""
+    var sq9 = ""
+    var sq10 = ""
 }
 
 

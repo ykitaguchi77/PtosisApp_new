@@ -14,7 +14,7 @@ class User : ObservableObject {
     @Published var date: Date = Date()
     @Published var id: String = ""
     @Published var hashid: String = ""
-    @Published var age: Int = 0
+    @Published var age: Int = -1
     @Published var selected_side: Int = 0
     @Published var selected_surgeon: Int = 0
     @Published var selected_procedure: Int = 0
@@ -27,6 +27,7 @@ class User : ObservableObject {
     @Published var imageNum: Int = 0 //写真の枚数（何枚目の撮影か）
     @Published var isNewData: Bool = false
     @Published var isSendData: Bool = false
+    @Published var isPtosisInterview: Bool = false
     }
 
 
@@ -39,6 +40,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     @State private var goTakePhoto: Bool = false  //撮影ボタン
+    @State private var goInterview: Bool = false  //撮影ボタン
     @State private var isPatientInfo: Bool = false  //患者情報入力ボタン
     @State private var goSendData: Bool = false  //送信ボタン
     @State private var savedData: Bool = false  //送信ボタン
@@ -57,7 +59,12 @@ struct ContentView: View {
                 .scaledToFit()
                 .frame(width: 200)
             
-            Button(action: { self.isPatientInfo = true /*またはself.show.toggle() */ }) {
+            Button(action: {
+                //病院番号はアプリを落としても保存されるようにしておく
+                self.user.selected_surgeon = UserDefaults.standard.integer(forKey: "surgeondefault")
+                self.isPatientInfo = true /*またはself.show.toggle() */
+                
+            }) {
                 HStack{
                     Image(systemName: "info.circle")
                     Text("患者情報入力")
@@ -72,6 +79,26 @@ struct ContentView: View {
                 Informations(user: user)
                 //こう書いておかないとmissing as ancestorエラーが時々でる
             }
+            
+            
+            Button(action: {
+                self.goInterview = true /*またはself.show.toggle() */
+                self.user.isSendData = false //撮影済みを解除
+            }) {
+                HStack{
+                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                    Text("問診")
+                }
+                    .foregroundColor(Color.white)
+                    .font(Font.largeTitle)
+            }
+                .frame(minWidth:0, maxWidth:CGFloat.infinity, minHeight: 75)
+                .background(Color.black)
+                .padding()
+            .sheet(isPresented: self.$goInterview) {
+                InterviewView(user: user)
+            }
+            
             
             Button(action: {
                 self.goTakePhoto = true /*またはself.show.toggle() */
@@ -154,6 +181,7 @@ struct ContentView: View {
                     //データの初期化
                     self.user.date = Date()
                     self.user.id = ""
+                    self.user.age = -1
                     self.user.imageNum = 0
                     self.user.selected_side = 0
                     self.user.selected_surgeon = 0
