@@ -91,7 +91,7 @@
 				BF60F1FE275F703100DD6253 /* Pages */,
 				BF60F205275F71D000DD6253 /* Modules */,
 				BF60F20E275F7AA400DD6253 /* Extension */,
-				BF60F27D27683F4F00DD6253 /* InteviewForm */,
+				BF60F27D27683F4F00DD6253 /* InteviewPages */,
 				BF60F1F1275F6FF200DD6253 /* Preview Content */,
 			);
 			path = PtosisApp;
@@ -116,7 +116,6 @@
 				BF60F203275F70BF00DD6253 /* CameraView.swift */,
 				BF60F20C275F799F00DD6253 /* SavedDateView.swift */,
 				BF60F1F4275F6FF200DD6253 /* Persistence.swift */,
-				BF60F277276741AE00DD6253 /* PtosisInterview.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -140,11 +139,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		BF60F27D27683F4F00DD6253 /* InteviewForm */ = {
+		BF60F27D27683F4F00DD6253 /* InteviewPages */ = {
 			isa = PBXGroup;
 			children = (
+				BF60F277276741AE00DD6253 /* PtosisInterview.swift */,
 			);
-			path = InteviewForm;
+			path = InteviewPages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
