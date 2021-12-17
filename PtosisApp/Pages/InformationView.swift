@@ -66,6 +66,7 @@ struct Informations: View {
                             .onChange(of: user.selected_side) { _ in
                                 self.user.isSendData = false
                                 }
+                            .pickerStyle(SegmentedPickerStyle())
                         
                         Picker(selection: $user.selected_procedure,
                                    label: Text("術式")) {
