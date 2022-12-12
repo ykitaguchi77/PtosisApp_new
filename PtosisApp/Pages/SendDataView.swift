@@ -31,7 +31,7 @@ struct SendData: View {
                             Text(self.user.date, style: .date)
                         }
                         Text("ID: \(self.user.id)")
-                        Text("術者: \(self.user.side[user.selected_side])")
+                        Text("Side: \(self.user.side[user.selected_side])")
                         Text("術者: \(self.user.surgeon[user.selected_surgeon])")
                         Text("術式: \(self.user.procedure[user.selected_procedure])")
                         Text("タイミング: \(self.user.timing[user.selected_timing])")
